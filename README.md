@@ -8,7 +8,7 @@ Here's how it works:
 
 ```
         +-------------+                                      +---------+
-        | GitHub Repo +--------+build trigger 👷‍+0---------->+ Quay.io |
+        | GitHub Repo +--------+build trigger👷‍+------------>+ Quay.io |
         +------+------+                                      +----+----+
                ^                                                  |
                |                                                  |
