@@ -7,25 +7,24 @@ It allows you to combine the speed and caching efficiency of Quay.io for buildin
 Here's how it works:
 
 ```
-        +-------------+                                      +---------+
-        | GitHub Repo +--------+build trigger👷‍+------------>+ Quay.io |
-        +------+------+                                      +----+----+
-               ^                                                  |
-               |                                                  |
-               |                                                  |
-               |                                                  |  Webhook
-Triggers       |                                                  |  notification
-Github Actions |                                                  |  to https://
-workflow👌     |                                                  |
-               |                                                  |
-               |               +-----------------+                |
-               +---------------+ This service :) +<---------------+
-                               +-----------------+
++-------------+                                      +---------+
+| GitHub Repo +--------+build trigger👷‍+------------>+ Quay.io |
++------+------+                                      +-----+---+
+       ^                                                   |
+       |                                                   |
+       |                                                   |
+       |                                      Webhook      |
+       |                                      success      |
+       |  Triggers       |                    notification |
+       |  Github Actions |                    over HTTPS   |
+       |  workflow👌     |                                 |
+       |                                                   |
+       |               +-----------------+                 |
+       +---------------+ This service :) +<----------------+
+                       +-----------------+
 
-                                Verifies authenticity
-                                through Quay's SSL cert 🔑
-
-
+                        Verifies authenticity
+                        through Quay's SSL cert 🔑
 ```
 
  use Quay.io for building your Docker images on a push to your GitHub branch, and then receiving notification in the same repository that the build has succeeded, triggering any workflow you want (e.g., update Helm chart to deploy new image to production Kubernetes cluster).
