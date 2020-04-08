@@ -15,9 +15,9 @@ Here's how it works:
        |                                                   |
        |                                      Webhook      |
        |                                      success      |
-       |  Triggers       |                    notification |
-       |  Github Actions |                    over HTTPS   |
-       |  workflow👌     |                                 |
+       |  Triggers                            notification |
+       |  Github Actions                      over HTTPS   |
+       |  workflow👌                                       |
        |                                                   |
        |               +-----------------+                 |
        +---------------+ This service :) +<----------------+
