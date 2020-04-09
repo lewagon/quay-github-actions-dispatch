@@ -72,7 +72,10 @@ func logHelper(r *http.Request) {
 func handleIncoming(rw http.ResponseWriter, r *http.Request) {
 	var in QuayPayload
 
-	logHelper(r) // debug
+	if os.Getenv("DEBUG") == "true" {
+		req.Debug = true
+		logHelper(r)
+	}
 
 	decoder := json.NewDecoder(r.Body)
 	err := decoder.Decode(&in)
@@ -110,7 +113,6 @@ func postToActions(in *QuayPayload) {
 }
 
 func main() {
-	req.Debug = true
 	server := &http.Server{
 		Addr: ":443",
 		TLSConfig: &tls.Config{
@@ -120,8 +122,5 @@ func main() {
 
 	http.HandleFunc("/incoming", handleIncoming)
 
-	err1 := server.ListenAndServeTLS(os.Getenv("CRT"), os.Getenv("KEY"))
-	if err1 != nil {
-		log.Fatal(err1)
-	}
+	log.Println(server.ListenAndServeTLS(os.Getenv("CRT"), os.Getenv("KEY")))
 }
