@@ -35,7 +35,7 @@ Here's how it works:
 It is recommended to run this service on a dedicated VPS with **no load balancer or reverse proxy** and an open 443 port.
 You should also obtain a certificate for a _domain name you will put your endpoint_ on as Quay needs to send you a webhook over HTTPS (otherwise you will not be able to authenticate through SSL) and point this domain name to your VPS' IP address.
 
-:warn: `quay-github-actions-dispatch` performs it's own SSL termination to read Quay's certificate and it needs access to relevant `.pem` and `.key` files.
+:warning: `quay-github-actions-dispatch` performs it's own SSL termination to read Quay's certificate and it needs access to relevant `.pem` and `.key` files.
 
 On the server with a 443 port exposed and certificates for domain name set up:
 
