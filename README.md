@@ -92,7 +92,7 @@ Will be sent to `https://api.github.com/repos/your_github/your_repo/dispatches`
 
 ### Workflow example to trigger on QUAY_BUILD_SUCCESS event
 
-Deploy to Digital Ocenan managed Kubernetes with Helm 3
+Deploy to Digital Ocean managed Kubernetes with Helm 3
 
 ```yml
 name: Helm deploy all things
