@@ -2,7 +2,7 @@
 
 A mini-service for securely forwarding Quay [build notifications](https://docs.quay.io/guides/notifications.html) to Github Actions' [obscure](https://help.github.com/en/actions/reference/events-that-trigger-workflows#external-events-repository_dispatch) `repository_dispatch` webhook to trigger any workflow in your repository _remotely_ on successful image build.
 
-It allows you to combine the speed and caching efficiency of Quay.io for building your production Docker images with the "I don't ever need another CI/CD tool" promise of Github Actions.
+It combines the speed and caching efficiency of Quay.io for building your production Docker images with the _"I don't ever need another CI/CD tool"_ promise of Github Actions.
 
 Here's how it works:
 
