@@ -118,7 +118,7 @@ jobs:
       - name: Upgrade/install chart
         run: |
         export KUBECONFIG=$GITHUB_WORKSPACE/.kubeconfig && \
-        helm upgrade linkedin charts/linkedin --install \
+        helm upgrade your_release charts/chart_name --install \
         --atomic --cleanup-on-fail \
         --set-string image.tag=$(echo $GITHUB_SHA | head -c7) \
 ```
