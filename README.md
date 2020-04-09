@@ -43,7 +43,7 @@ On the server with a 443 port exposed and certificates for domain name set up:
  docker run -d --rm -p 443:443 \
  -v /certs:/certs \                # /certs folder on your host needs to have .key and .pem files
  -e GH_TOKEN=YOUR_GITHUB_TOKEN \   # token needs only `repo:read` access
- - e DEBUG=true \                  # optional to log incoming and outgoing requests and responses
+ -e DEBUG=true \                  # optional to log incoming and outgoing requests and responses
  lewagon/quay-github-actions-dispatch:0.2
 ```
 In your Quay repository settings, under "Events and Notifications" create a "Webhook POST" notification for "Dockerfile Build Successfully Completed" and provide `https://YOUR_CERTIFIED_DOMAIN.com/incoming` endpoint.
