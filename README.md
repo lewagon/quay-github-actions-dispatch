@@ -90,6 +90,15 @@ Will be sent to `https://api.github.com/repos/your_github/your_repo/dispatches`
 
 `"text"` field will contain first 7 chars of your commit SHA from the incoming payload
 
+The service wil also set the headers that Github requires: 
+
+```
+Authorization: token your-token-here
+Accept: application/vnd.github.everest-preview+json
+```
+
+Token will be read from the ENV variable `GH_TOKEN` that you can set to your GitHub token value with the `repo:read` scope.
+
 ### Workflow example to trigger on QUAY_BUILD_SUCCESS event
 
 Deploy to Digital Ocean managed Kubernetes with Helm 3
